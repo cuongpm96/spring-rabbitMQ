@@ -1,5 +1,11 @@
-package com.demo.model;
+package producer.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.springframework.stereotype.Component;
+
+@Component
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class,property = "@id", scope = User.class)
 public class User {
     private String username;
     private String password;
